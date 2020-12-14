@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="#ffff">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1B489F">
+
+        <LinearLayout
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/listData"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="6dp"
+                android:src="@drawable/bn_menu"/>
+
+            <TextView
+                android:id="@+id/UserTxt"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="RAFIKI OLIVIER UWACU"
+                android:gravity="center_horizontal"
+                android:textColor="#ffff"/>
+
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#00000000"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".Register">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/logo_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:text="New Work Details"
+                android:textColor="#000"
+                android:textSize="35sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Work Tittle"
+                        android:textSize="18sp"
+                        android:textColor="#020101"
+                        android:fontFamily="sans-serif"/>
+                    <EditText
+                        android:id="@+id/w_tittle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Job Tittle"
+                        android:textColorHint="#595656"
+                        android:textColor="#000000"
+                        android:fontFamily="sans-serif"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Work Description"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif"
+                        android:textColor="#020101"
+                        android:labelFor="@id/w_descr" />
+                    <EditText
+                        android:id="@+id/w_descr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Work Description"
+                        android:textColorHint="#595656"
+                        app:passwordToggleEnabled="true"
+                        android:textColor="#000000"
+                        android:fontFamily="sans-serif"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Work Date"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif"
+                        android:textColor="#020101"
+                        android:labelFor="@id/w_descr" />
+
+                    <EditText
+                        android:id="@+id/w_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Select date"
+                        android:textColorHint="#595656"
+                        android:textColor="#000000"
+                        android:inputType="date"
+                        android:fontFamily="sans-serif"/>
+
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btn_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:padding="5dp"
+                    android:background="#ffff"
+                    android:gravity="center"
+                    android:text="Save work"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#fff" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

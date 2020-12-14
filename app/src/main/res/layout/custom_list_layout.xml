@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/transaction_item">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:alignmentMode="alignMargins"
+        android:columnCount="1"
+        android:columnOrderPreserved="false"
+        android:rowCount="3">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/amazon"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_margin="3dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="#ffff">
+
+                <RelativeLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/coverImage"
+                        android:src="@drawable/ic_launcher_background"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:scaleType="centerCrop"
+                        app:riv_corner_radius="10dp"/>
+
+                    <RelativeLayout
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="70dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/songTitle"
+                            android:text="Amazon"
+                            android:textSize="16sp"
+                            android:textColor="#0B0A0A"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/songArtist"
+                            android:layout_marginTop="6dp"
+                            android:layout_below="@id/songTitle"
+                            android:text="Shopping"
+                            android:textSize="12sp"
+                            android:textColor="#65656C"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+</LinearLayout>
