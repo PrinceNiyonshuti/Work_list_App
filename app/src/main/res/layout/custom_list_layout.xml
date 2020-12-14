@@ -44,7 +44,7 @@
                         android:src="@drawable/ic_launcher_background"
                         android:layout_width="52dp"
                         android:layout_height="52dp"
-                        android:scaleType="centerCrop"
+                        android:scaleType="fitCenter"
                         app:riv_corner_radius="10dp"/>
 
                     <RelativeLayout
@@ -55,7 +55,7 @@
 
                         <TextView
                             android:id="@+id/songTitle"
-                            android:text="Amazon"
+                            android:text="Work Tittle"
                             android:textSize="16sp"
                             android:textColor="#0B0A0A"
                             android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
                             android:id="@+id/songArtist"
                             android:layout_marginTop="6dp"
                             android:layout_below="@id/songTitle"
-                            android:text="Shopping"
+                            android:text="Work Priority"
                             android:textSize="12sp"
                             android:textColor="#65656C"
                             android:layout_width="wrap_content"

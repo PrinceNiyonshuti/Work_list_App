@@ -8,19 +8,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -28,23 +22,20 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class WorkSorted extends AppCompatActivity {
 
     ImageView go_back,orderWork;
     RecyclerView recyclerView;
     List<Song> songs;
-    private static String JSON_URL = "http://192.168.43.126/work/work_list.php";
+    private static String JSON_URL = "http://192.168.43.126/work/order_work_list.php";
     Adapter adapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_work_sorted);
 
         recyclerView = findViewById(R.id.songsList);
         go_back = findViewById(R.id.go_back);
@@ -55,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         go_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent register_go = new Intent(MainActivity.this, WorkData.class);
+                Intent register_go = new Intent(WorkSorted.this, WorkData.class);
                 startActivity(register_go);
             }
         });
@@ -63,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         orderWork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent register_go = new Intent(MainActivity.this, WorkSorted.class);
+                Intent register_go = new Intent(WorkSorted.this, MainActivity.class);
                 startActivity(register_go);
             }
         });

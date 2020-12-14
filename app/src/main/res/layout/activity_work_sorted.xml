@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".WorkSorted"
     android:orientation="vertical"
-    android:background="#ffff">
+    android:background="#ffffff">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -51,6 +51,5 @@
         android:id="@+id/songsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 
 </LinearLayout>

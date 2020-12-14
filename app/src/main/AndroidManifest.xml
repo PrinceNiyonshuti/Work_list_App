@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkList">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".WorkSorted"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".WorkData">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

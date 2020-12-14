@@ -137,11 +137,67 @@
                         android:id="@+id/w_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Select date"
+                        android:hint=" Select Date : 2020-03-25"
                         android:textColorHint="#595656"
                         android:textColor="#000000"
                         android:inputType="date"
                         android:fontFamily="sans-serif"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Work Priority"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif"
+                        android:textColor="#020101"
+                        android:labelFor="@id/w_descr" />
+
+                    <RadioGroup
+                        android:id="@+id/w_priority"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <RadioButton
+                            android:id="@+id/radioLow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Low"
+                            android:textColor="#000000"
+                            android:checked="true" />
+
+                        <RadioButton
+                            android:id="@+id/radioMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000000"
+                            android:text="Medium" />
+
+                        <RadioButton
+                            android:id="@+id/radioHigh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000000"
+                            android:text="High" />
+
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/radioData"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#595656"
+                        app:passwordToggleEnabled="true"
+                        android:textColor="#000000"
+                        android:fontFamily="sans-serif"/>
+
 
                 </LinearLayout>
 

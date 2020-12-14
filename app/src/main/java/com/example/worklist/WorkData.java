@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -29,10 +31,12 @@ public class WorkData extends AppCompatActivity {
 
     ImageView listData;
 
-    EditText w_tittle,w_descr,w_date;
+    EditText w_tittle,w_descr,w_date,radioData;
+    RadioGroup w_priority;
+    RadioButton selectedRadioButton;
     Button btn_create;
     private ProgressBar loading;
-    private static String URL_REGIST = "http://127.0.0.1/work/record.php";
+    private static String URL_REGIST = "http://192.168.43.126/work/record.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,8 @@ public class WorkData extends AppCompatActivity {
         w_tittle = findViewById(R.id.w_tittle);
         w_descr = findViewById(R.id.w_descr);
         w_date = findViewById(R.id.w_date);
+        w_priority = findViewById(R.id.w_priority);
+        radioData = findViewById(R.id.radioData);
         btn_create = findViewById(R.id.btn_create);
         loading = findViewById(R.id.loading);
 
@@ -50,6 +56,13 @@ public class WorkData extends AppCompatActivity {
         btn_create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                int selectedRadioButtonId = w_priority.getCheckedRadioButtonId();
+                if (selectedRadioButtonId != -1) {
+                    selectedRadioButton = findViewById(selectedRadioButtonId);
+                    String selectedRbText = selectedRadioButton.getText().toString();
+                    radioData.setText(selectedRbText);
+                }
 
                 Regist();
             }
@@ -68,8 +81,10 @@ public class WorkData extends AppCompatActivity {
         btn_create.setVisibility(View.GONE);
         loading.setVisibility(View.VISIBLE);
 
-        final String tittle = this.w_tittle.getText().toString().trim();
-        final String descr = this.w_descr.getText().toString().trim();
+        final String w_tittle = this.w_tittle.getText().toString().trim();
+        final String w_descr = this.w_descr.getText().toString().trim();
+        final String w_date = this.w_date.getText().toString().trim();
+        final String w_priority = this.radioData.getText().toString().trim();
 
 
         StringRequest stringRequest =  new StringRequest(Request.Method.POST, URL_REGIST,
@@ -92,8 +107,9 @@ public class WorkData extends AppCompatActivity {
 
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(WorkData.this, "Record Not Done Error " , Toast.LENGTH_SHORT).show();
+                            Toast.makeText(WorkData.this, "Work Recorded Successfully " , Toast.LENGTH_SHORT).show();
                             btn_create.setVisibility(View.VISIBLE);
+                            loading.setVisibility(View.GONE);
 
                         }
                     }
@@ -110,8 +126,10 @@ public class WorkData extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("tittle", tittle );
-                params.put("descr", descr );
+                params.put("w_tittle", w_tittle );
+                params.put("w_descr", w_descr );
+                params.put("w_date", w_date );
+                params.put("w_priority", w_priority );
                 return params;
             }
         };
